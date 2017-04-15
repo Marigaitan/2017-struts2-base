@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Basic Struts 2 Application - Welcome</title>
 </head>
-<body>
+<body>  
 	<!-- Aca empieza lo que se va a mostrar en la pagina -->
 	<h1>Welcome To Struts 2!</h1>
 	<p>

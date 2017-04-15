@@ -19,9 +19,11 @@ public class PersonaAction extends ActionSupport{
 	private String gender;
 	private List<Persona> personas; 
 	
+	
 
 public String save(){
 		personas = PersistentManager.getInstance();
+		Persona p;
 		int edad = 0;
 		try{
 		edad = Integer.parseInt(age);
@@ -29,9 +31,17 @@ public String save(){
 			addActionError("Ocurrió un error con la edad");
 			return ERROR;
 		}
-		new Persona(personas.size(), name, edad, gender);
+		p = new Persona(personas.size(), name, edad, gender);
+		personas.add(p);
 		return SUCCESS;
 		}
+
+public String execute(){
+	personas = PersistentManager.getInstance();
+	
+	return SUCCESS;
+}
+
 public String getName() {
 	return name;
 }
@@ -41,6 +51,10 @@ public void setName(String name) {
 public String getAge() {
 	return age;
 }
+public static long getSerialversionuid() {
+	return serialVersionUID;
+}
+
 public void setAge(String age) {
 	this.age = age;
 }
